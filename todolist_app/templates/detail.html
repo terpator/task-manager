@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h3>{{ task.title }}</h3>
+    <p>{{ task.description }}</p>
+    <p>Completed: {{ task.completed }}</p>
+    <form>
+        <button formaction="{% url 'warning' %}">Edit task</button>
+        <button formaction="{% url 'warning' %}">Delete task</button>
+    </form>
+{% endblock content %}

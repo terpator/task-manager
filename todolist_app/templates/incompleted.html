@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h3>Incompleted tasks</h3>
+    <ul>
+        {% for task in object_list %}
+            {% if task.completed == False %}
+                <li><a href='{% url "detail" task.pk %}'>{{ task.title }}</a></li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+{% endblock content %}

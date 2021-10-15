@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h1>Task Manager</h1>
+    <ul>
+        {% for task in object_list %}
+            <li><a href='{% url "detail" task.pk %}'>{{ task.title }}</a></li>
+        {% endfor %}
+    </ul>
+    <form>
+        <button formaction="{% url 'warning' %}">Create task</button>
+    </form>
+    Filter by: <a href="{% url 'completed' %}">Completed tasks</a> | 
+    <a href="{% url 'incompleted' %}">Incompleted tasks</a>
+{% endblock content %}
